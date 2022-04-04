@@ -4,14 +4,15 @@ const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
-const db = require('../models');
+const env = process.env.NODE_ENV || 'development';
+const config = require(__dirname + '/../config/config.json')[env];
+const db = {};
 
 let sequelize = new Sequelize('postgres://soorajtk3:1234@localhost:5432/todo');
-
 sequelize
   .authenticate()
-  .then(console.log('Connection has been established successfully.'))
-  .catch(console.log('Connection not  established.'));
+  .then(console.log('connection established successfully'))
+  .catch(console.log('connection not established'));
 
 fs.readdirSync(__dirname)
   .filter((file) => {

@@ -8,7 +8,7 @@ const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
 
-let sequelize = new Sequelize('postgres://soorajtk3:1234@localhost:5432/todo');
+let sequelize = new Sequelize('postgres://soorajvij:1234@localhost:5432/todo1');
 sequelize
   .authenticate()
   .then(console.log('connection established successfully'))
